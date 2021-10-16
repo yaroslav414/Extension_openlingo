@@ -1,0 +1,25 @@
+{
+    "name": "OpenLingo",
+    "description": "Add resources to your OpenLingo repository",
+    "version": "0.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "./images/ol-logo16.png",
+            "32": "./images/ol-logo32.png",
+            "64": "./images/ol-logo32.png",
+            "128": "./images/ol-logo32.png"
+        }
+    },
+    "icons": {
+        "16": "./images/ol-logo16.png",
+        "32": "./images/ol-logo32.png",
+        "64": "./images/ol-logo32.png",
+        "128": "./images/ol-logo32.png"
+    },
+    "permissions": ["storage", "tabs", "activeTab", "scripting"]
+}

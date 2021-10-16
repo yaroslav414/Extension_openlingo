@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="openlingo.css">
+    </head>
+    <body>
+        <div class="background-container">
+            <h1>OpenLingo - Add a resource</h1>
+            <div class="white-container">
+                <h2 id="title"> Video Title </h2>
+                <div class="meta-container">
+                    <img id="thumbnail" src="images/testthumbnail.jpeg" alt="thumbnail">
+                    <div class="rating-container">
+                        <label for="understanding">Understanding</label> 
+                        <input type="range" id="understanding" name="understanding" min="0" max="100"> <br>
+                        <label for="usefulness">Usefulness</label> 
+                        <input type="range" id="usefulness" name="understanding" min="1" max="5">
+                    </div>
+                </div>
+                <h4> Other Intermediate 1 Learners on average had {78}% comprehension </h4>
+                <form action="">
+                    <div class="input-container">
+                        <p> Link: </p>
+                        <input type="text" class="input-bar" name="link"><br>
+                    </div>
+                    <div class="input-container">
+                        <p> Tags: </p>
+                        <input type="text" class="input-bar" name="tags"><br>
+                    </div>
+                    <input type="submit" value="Add Resource">
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="popup.js"></script>
+</html>
