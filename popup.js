@@ -7,12 +7,18 @@ function youtube_parser(url){
     return (match&&match[7].length==11)? match[7] : false;
 }
 
+chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url;
+    console.log(url);
+    video_id = youtube_parser(url);
+    updateResourceImage(video_id);
+    updateTitle(video_id);
+});
+
 chrome.tabs.onActivated.addListener( function(activeInfo){
     chrome.tabs.get(activeInfo.tabId, function(tab){
         y = tab.url;
-        console.log("you are here: "+y);
         video_id = youtube_parser(y);
-        console.log(video_id);
         updateResourceImage(video_id);
         updateTitle(video_id);
     });
@@ -20,9 +26,7 @@ chrome.tabs.onActivated.addListener( function(activeInfo){
 
 chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
     if (tab.active && change.url) {
-        console.log("you are here: "+change.url);  
         video_id = youtube_parser(change.url);
-        console.log(video_id);
         updateResourceImage(video_id);
         updateTitle(video_id);
     }
