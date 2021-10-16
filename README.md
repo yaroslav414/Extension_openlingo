@@ -1,0 +1,1 @@
+openlingo-browser-extension
