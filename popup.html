@@ -1,12 +1,14 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="openlingo.css">
+        <script src="scripts/jquery-3.6.0.js"></script>
     </head>
     <body>
         <div class="background-container">
             <h1>OpenLingo - Add a resource</h1>
             <div class="white-container">
-                <h2 id="title"> Resource Title </h2>
+                <h2 id="title"></h2>
                 <div class="meta-container">
                     <img id="thumbnail" src="images/testthumbnail.jpeg" alt="thumbnail">
                     <div class="rating-container">
@@ -17,7 +19,7 @@
                     </div>
                 </div>
                 <h4> Other Intermediate 1 Learners on average had {78}% comprehension </h4>
-                <form action="">
+                 <div class="form-container">
                     <div class="input-container">
                         <p> Link: </p>
                         <input type="text" id="link-input" class="input-bar" name="link"><br>
@@ -26,8 +28,9 @@
                         <p> Tags: </p>
                         <input type="text" class="input-bar" name="tags"><br>
                     </div>
-                    <input type="submit" value="Add Resource">
-                </form>
+                    <input type="submit" value="Add Resource" id="submit-button">
+                    <p id="saved-success"></p>
+                </div>
             </div>
         </div>
     </body>
