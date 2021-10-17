@@ -1,8 +1,12 @@
-var image = document.getElementById("thumbnail");
-var title = document.getElementById("title");
-var link = document.getElementById("link-input");
-var submitButton = document.getElementById("submit-button");
-var saved = document.getElementById("saved-success");
+let image = document.getElementById("thumbnail");
+let title = document.getElementById("title");
+let link = document.getElementById("link-input");
+let tags = document.getElementById("tag-input");
+let submitButton = document.getElementById("submit-button");
+let saved = document.getElementById("saved-success");
+let understanding = document.getElementById("understanding");
+let like = document.getElementById("like");
+
 const resourceID = 9999
 
 function youtube_parser(url){
@@ -68,19 +72,23 @@ function updateTitle(video_id) {
 
 
 function save(resourceID) {
-    // saved.innerHTML = 'Saved!';
-    $.post('http://127.0.0.1:5000/save_resource ', {
-        resource_id: resourceID
+    resource_under = understanding.value;
+    resource_like = like.value;   
+    resource_link = link.value;
+    resource_tags = tags.value;
+
+
+    $.post('http://127.0.0.1:5000/extension_save', {
+        resource_id: resourceID,
+        resource_understanding: resource_under,
+        resource_like: resource_like,
+        resource_link: resource_link,
+        resource_tags: resource_tags
     }).done(function(response) {
-        console.log('am i here');
-        console.log(response);
         saved.innerHTML = 'Saved!';
     }).fail(function(response) {
         saved.innerHTML = 'Unable to save';
     });
-
-    
-
 
 }
 
