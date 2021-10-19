@@ -6,6 +6,7 @@ let submitButton = document.getElementById("submit-button");
 let saved = document.getElementById("saved-success");
 let understanding = document.getElementById("understanding");
 let like = document.getElementById("like");
+let learnerTag = document.getElementById("other-learners")
 
 const resourceID = 9999
 
@@ -30,27 +31,9 @@ chrome.tabs.query({active: true, currentWindow: true}, tabs => {
     updateLink(url);
     updateResourceImage(video_id);
     updateTitle(video_id);
+    getRating()
 });
 
-
-// chrome.tabs.onActivated.addListener( function(activeInfo){
-//     chrome.tabs.get(activeInfo.tabId, function(tab){
-//         y = tab.url;
-//         video_id = youtube_parser(y);
-//         updateLink(url);
-//         updateResourceImage(video_id);
-//         updateTitle(video_id);
-//     });
-// });
-
-// chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
-//     if (tab.active && change.url) {
-//         video_id = youtube_parser(change.url);
-//         updateLink(url);
-//         updateResourceImage(video_id);
-//         updateTitle(video_id);
-//     }
-// });
 
 function updateLink(url) {
     link.value = url;
@@ -92,3 +75,21 @@ function save(resourceID) {
 
 }
 
+
+function getRating() {
+    resource_link = link.value;
+    $.post('http://127.0.0.1:5000/get_rating', {
+        resource_link: resource_link
+    }).done(function(response) {
+        console.log(response)
+        console.log(response.rating)
+        if (response.success) {
+            rating = response.rating
+            learnerTag.innerHTML = 'Other intermediate 1 learners had ' + rating + '% average comprehension'
+        } else {
+            learnerTag.innerHTML = ""
+        }
+    }).fail(function(response){
+        learnerTag.innerHTML = ""
+    })
+}
