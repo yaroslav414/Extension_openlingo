@@ -1,8 +1,8 @@
 # OpenLingo Browser Extension
 
-## Team OpenLingo - Innovation Project - INFO90010
+## Team OpenLingo - Innovation Project
 
-This project is an extension for the prototype designed for assessment as part of the subject `Technology Innovation Project - INFO90010`  
+This project is an extension for the prototype designed for assessment as part of the subject `Technology Innovation Project`  
 This extension acts as a component of part of the main web-application prototype which can be found: [OpenLingo Main Repository](https://github.com/jjkuang123/Technology-Innovation-Project)
 
 
