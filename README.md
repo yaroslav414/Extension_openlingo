@@ -6,7 +6,7 @@ This project is an extension for the prototype designed for assessment as part o
 This extension acts as a component of part of the main web-application prototype which can be found: [OpenLingo Main Repository](https://github.com/jjkuang123/Technology-Innovation-Project)
 
 
-## Overview 
+## Overview   
 
 The OpenLingo browser extension is designed to provide the user an easier means to add resources into their repository for reference later.  
 The browser extension currently works primarily with YouTube resources, able to extract the thumbnail, title and URL for the resource. The user can then simply add inputs such as their understanding, like and tags to save the  
